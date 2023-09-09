@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\Owner\StoreOwnerRequest;
 use App\Http\Requests\Owner\UpdateOwnerRequest;
+use App\Http\Resources\OwnerResource;
 use App\Models\Owner;
 
 class OwnerController extends Controller
@@ -13,7 +15,7 @@ class OwnerController extends Controller
      */
     public function index()
     {
-        //
+        return "Owners";
     }
 
     /**
@@ -21,7 +23,6 @@ class OwnerController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -29,7 +30,11 @@ class OwnerController extends Controller
      */
     public function store(StoreOwnerRequest $request)
     {
-        //
+        $validated = $request->validated();
+
+        $owner = Owner::create($validated);
+
+        return OwnerResource::make($owner);
     }
 
     /**
