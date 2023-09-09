@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('first_name', 50)->nullable(false);
             $table->string('last_name', 50)->nullable(false);
-            $table->string('profile_img_path');
+            $table->string('profile_img_path')->nullable(true);
             $table->string('email', 50)->nullable(false)->unique();
             $table->string('password', 255)->nullable(false);
-            $table->string('phone_number', 20)->nullable(false);
-            
+            $table->string('phone_number', 20)->nullable(false)->unique();
+
             $table->timestamps();
         });
     }
