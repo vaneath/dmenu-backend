@@ -18,10 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], function () {
 
     //owners
-    Route::apiResource('owners', OwnerController::class)->only([
-        'index',
-        'store',
-        'update',
-        'destroy',
-    ]);
+    Route::apiResource('owners', OwnerController::class);
 });

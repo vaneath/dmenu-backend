@@ -11,7 +11,7 @@ class UpdateOwnerRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class UpdateOwnerRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'first_name' => ['string', 'max:50'],
+            'last_name' => ['string', 'max:50'],
+            'profile_img_path' => ['string'],
+            'email' => ['string', 'max:50', 'unique:owners'],
+            'password' => ['string', 'max:255'],
+            'phone_number' => ['string', 'max:20', 'unique:owners'],
         ];
     }
 }
