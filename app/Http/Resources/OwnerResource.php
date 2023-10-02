@@ -15,21 +15,14 @@ class OwnerResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            "data" => [
-                "type" => "owners",
-                "owner_id" => $this->id,
-                "attributes" => [
-                    "first_name" => $this->first_name,
-                    "last_name" => $this->last_name,
-                    "profile_img_path" => $this->profile_img_path,
-                    "email" => $this->email,
-                    "phone_number" => $this->phone_number,
-                ],
-                'timestamp' => [
-                    'created_at' => $this->created_at,
-                    'updated_at' => $this->updated_at,
-                ],
-            ],
+            "id" => $this->id,
+            "first_name" => $this->first_name,
+            "last_name" => $this->last_name,
+            "profile_img_path" => $this->profile_img_path,
+            "email" => $this->email,
+            "phone_number" => $this->phone_number,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ];
     }
 }
