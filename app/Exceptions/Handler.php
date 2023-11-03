@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use LaravelJsonApi\Exceptions\ExceptionParser;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -37,7 +38,7 @@ class Handler extends ExceptionHandler
     });
 
     $this->renderable(
-      \LaravelJsonApi\Exceptions\ExceptionParser::make()->renderable()
+      ExceptionParser::make()->renderable()
     );
   }
 }
