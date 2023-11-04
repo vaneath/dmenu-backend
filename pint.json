@@ -1,0 +1,4 @@
+{
+    "preset": "psr12",
+    "exclude": ["database/migrations", "app/Models"]
+}

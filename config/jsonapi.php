@@ -1,9 +1,10 @@
 <?php
+
 use App\JsonApi\V1\Server;
 
 return [
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Root Namespace
   |--------------------------------------------------------------------------
@@ -15,9 +16,9 @@ return [
   | By default this is set to `JsonApi` which means the root namespace
   | will be `\App\JsonApi`, if your application's namespace is `App`.
   */
-  'namespace' => 'JsonApi',
+    'namespace' => 'JsonApi',
 
-  /*
+    /*
   |--------------------------------------------------------------------------
   | Servers
   |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ return [
   | unique name for each server, and the value being the fully-qualified
   | class name of the server class.
   */
-  'servers' => [
-    'v1' => Server::class,
-  ],
+    'servers' => [
+        'v1' => Server::class,
+    ],
 ];

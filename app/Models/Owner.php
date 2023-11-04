@@ -8,25 +8,25 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Owner extends Model
 {
-  use HasApiTokens, HasFactory;
+    use HasApiTokens, HasFactory;
 
-  protected $casts = [
-    'published_at' => 'datetime',
-    'password' => 'hashed',
-    'password_confirmation' => 'hashed',
-  ];
+    protected $casts = [
+        'published_at' => 'datetime',
+        'password' => 'hashed',
+        'password_confirmation' => 'hashed',
+    ];
 
-  protected $fillable = [
-    'first_name',
-    'last_name',
-    'profile_img_path',
-    'email',
-    'password',
-    'password_confirmation',
-    'phone_number',
-  ];
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'profile_img_path',
+        'email',
+        'password',
+        'password_confirmation',
+        'phone_number',
+    ];
 
-  protected $hidden = [
-    'password',
-  ];
+    protected $hidden = [
+        'password',
+    ];
 }
