@@ -1,8 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\V1\OwnerController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use LaravelJsonApi\Laravel\Facades\JsonApiRoute;
 use LaravelJsonApi\Laravel\Http\Controllers\JsonApiController;
 use LaravelJsonApi\Laravel\Routing\ResourceRegistrar;
@@ -18,7 +15,6 @@ use LaravelJsonApi\Laravel\Routing\ResourceRegistrar;
 |
 */
 
-
 JsonApiRoute::server('v1')->prefix('v1')->resources(function (ResourceRegistrar $server) {
-  $server->resource('owners', JsonApiController::class);
+    $server->resource('owners', JsonApiController::class);
 });

@@ -7,11 +7,11 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-  /**
-   * Seed the application's database.
-   */
-  public function run(): void
-  {
-    $this->call(OwnerSeeder::class);
-  }
+    /**
+     * Seed the application's database.
+     */
+    public function run(): void
+    {
+        $this->call(OwnerSeeder::class);
+    }
 }
