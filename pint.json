@@ -1,4 +1,11 @@
 {
-    "preset": "psr12",
-    "exclude": ["database/migrations", "app/Models"]
+  "preset": "laravel",
+  "rules": {
+    "simplified_null_return": true,
+    "braces": false,
+    "new_with_braces": {
+      "anonymous_class": false,
+      "named_class": false
+    }
+  }
 }
