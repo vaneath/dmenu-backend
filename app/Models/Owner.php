@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Laravel\Sanctum\HasApiTokens;
 
 class Owner extends Model
@@ -29,4 +30,9 @@ class Owner extends Model
     protected $hidden = [
         'password',
     ];
+
+    public function companies(): BelongsToMany
+    {
+        return $this->belongsToMany(Company::class);
+    }
 }

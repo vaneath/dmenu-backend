@@ -13,6 +13,16 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'password' => 'hashed',
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
@@ -31,15 +41,5 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-    ];
-
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
     ];
 }
