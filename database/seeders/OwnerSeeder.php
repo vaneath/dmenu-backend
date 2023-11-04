@@ -13,5 +13,11 @@ class OwnerSeeder extends Seeder
     public function run(): void
     {
         Owner::factory()->count(10)->create();
+        Owner::factory([
+            'first_name' => 'V',
+            'last_name' => 'A',
+            'phone_number' => '123456789',
+            'email' => 'vaneath@gmail.com',
+        ]);
     }
 }

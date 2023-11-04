@@ -27,6 +27,7 @@ class Server extends BaseServer
     {
         return [
             Owners\OwnerSchema::class,
+            Companies\CompanySchema::class,
         ];
     }
 }
