@@ -18,6 +18,6 @@ class OwnerSeeder extends Seeder
             'last_name' => 'A',
             'phone_number' => '123456789',
             'email' => 'vaneath@gmail.com',
-        ]);
+        ])->create();
     }
 }
