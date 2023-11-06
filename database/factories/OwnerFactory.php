@@ -21,8 +21,8 @@ class OwnerFactory extends Factory
             'last_name' => fake()->lastName(),
             'profile_img_path' => fake()->imageUrl(),
             'email' => fake()->unique()->safeEmail(),
-            'password' => fake()->password(),
-            'password_confirmation' => fake()->password(),
+            'password' => 'password',
+            'password_confirmation' => 'password',
             'phone_number' => fake()->phoneNumber(),
         ];
     }

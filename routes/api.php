@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\V1\CompanyController;
+use App\Models\Owner;
+use Illuminate\Http\Request;
 use LaravelJsonApi\Laravel\Facades\JsonApiRoute;
 use LaravelJsonApi\Laravel\Http\Controllers\JsonApiController;
 use LaravelJsonApi\Laravel\Routing\ResourceRegistrar;
@@ -17,4 +20,9 @@ use LaravelJsonApi\Laravel\Routing\ResourceRegistrar;
 
 JsonApiRoute::server('v1')->prefix('v1')->resources(function (ResourceRegistrar $server) {
     $server->resource('owners', JsonApiController::class);
+    $server->resource('companies', CompanyController::class);
+    Route::get('token', function (Request $request) {
+        $token = Owner::find(11)->createToken('authToken')->plainTextToken;
+        return response()->json(['token' => $token]);
+    });
 });

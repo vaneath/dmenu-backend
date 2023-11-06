@@ -6,6 +6,7 @@ use App\Models\Company;
 use LaravelJsonApi\Eloquent\Contracts\Paginator;
 use LaravelJsonApi\Eloquent\Fields\DateTime;
 use LaravelJsonApi\Eloquent\Fields\ID;
+use LaravelJsonApi\Eloquent\Fields\Relations\BelongsToMany;
 use LaravelJsonApi\Eloquent\Fields\Str;
 use LaravelJsonApi\Eloquent\Filters\WhereIdIn;
 use LaravelJsonApi\Eloquent\Pagination\PagePagination;
@@ -28,6 +29,7 @@ class CompanySchema extends Schema
             Str::make('name'),
             Str::make('email'),
             Str::make('logoImgPath'),
+            BelongsToMany::make('owners'),
             DateTime::make('createdAt')->sortable()->readOnly(),
             DateTime::make('updatedAt')->sortable()->readOnly(),
         ];
