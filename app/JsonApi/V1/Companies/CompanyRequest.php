@@ -6,11 +6,8 @@ use LaravelJsonApi\Laravel\Http\Requests\ResourceRequest;
 
 class CompanyRequest extends ResourceRequest
 {
-
     /**
      * Get the validation rules for the resource.
-     *
-     * @return array
      */
     public function rules(): array
     {
@@ -20,5 +17,4 @@ class CompanyRequest extends ResourceRequest
             'logoImgPath' => ['string'],
         ];
     }
-
 }

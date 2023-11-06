@@ -23,6 +23,7 @@ JsonApiRoute::server('v1')->prefix('v1')->resources(function (ResourceRegistrar 
     $server->resource('companies', CompanyController::class);
     Route::get('token', function (Request $request) {
         $token = Owner::find(11)->createToken('authToken')->plainTextToken;
+
         return response()->json(['token' => $token]);
     });
 });

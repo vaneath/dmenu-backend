@@ -13,15 +13,15 @@ use LaravelJsonApi\Laravel\Http\Requests\AnonymousQuery;
 
 class CompanyController extends Controller
 {
+    use Actions\AttachRelationship;
+    use Actions\Destroy;
+    use Actions\DetachRelationship;
     use Actions\FetchMany;
     use Actions\FetchOne;
-    use Actions\Update;
-    use Actions\Destroy;
     use Actions\FetchRelated;
     use Actions\FetchRelationship;
+    use Actions\Update;
     use Actions\UpdateRelationship;
-    use Actions\AttachRelationship;
-    use Actions\DetachRelationship;
 
     public function store(CompanySchema $schema, CompanyRequest $request, AnonymousQuery $query)
     {
@@ -38,5 +38,4 @@ class CompanyController extends Controller
 
         return new DataResponse($model);
     }
-
 }
